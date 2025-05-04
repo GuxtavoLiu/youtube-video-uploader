@@ -1,44 +1,46 @@
 
 # YouTube Video Uploader CLI
 
-Uma ferramenta simples em Python para enviar em lote todos os vídeos de uma pasta para o seu canal do YouTube, usando a **YouTube Data API v3**.
+A simple Python tool to batch-upload all videos from a folder to your YouTube channel using the **YouTube Data API v3**.
 
 ---
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-- **Upload em lote**: percorre todos os arquivos de vídeo de uma pasta e faz o envio automático.  
-- **Visibilidade personalizável**: escolha entre **Público** (padrão) ou **Privado** antes de subir.  
-- **Organização automática**: cada vídeo enviado com sucesso é movido para uma subpasta `upload_success`.  
-- **Autenticação OAuth**: fluxo via navegador, sem expor sua senha.
-
----
-
-## 📝 Pré-requisitos
-
-- **Python 3.7+** instalado  
-- Conta Google com um canal no YouTube  
-- Projeto no Google Cloud com a **YouTube Data API v3** ativada  
-- Credenciais OAuth 2.0 (arquivo `client_secret.json`)
+- **Batch upload**: scans all video files in a folder and uploads them automatically.  
+- **Custom visibility**: choose **Public** (default) or **Private** before uploading.  
+- **Automatic organization**: each successfully uploaded video is moved to an `upload_success` subfolder.  
+- **OAuth authentication**: runs in your browser without exposing your password.
 
 ---
 
-## ⚙️ Instalação
+## 📝 Prerequisites
 
-1. Clone este repositório:
+- **Python 3.7+** installed  
+- A Google account with a YouTube channel  
+- A Google Cloud project with the **YouTube Data API v3** enabled  
+- OAuth 2.0 credentials (a `client_secret.json` file)
+
+---
+
+## ⚙️ Installation
+
+1. Clone this repository:  
    ```bash
-   git clone https://github.com/SEU_USUARIO/youtube-video-uploader.git
+   git clone https://github.com/GuxtavoLiu/youtube-video-uploader.git
    cd youtube-video-uploader
-    ```
+   ```
 
-2. Crie um ambiente virtual e ative-o:
+2. Create and activate a virtual environment:
 
    ```bash
    python -m venv .venv
-   source .venv/bin/activate    # Linux / macOS
-   .venv\Scripts\activate       # Windows PowerShell
+   # Linux / macOS
+   source .venv/bin/activate  
+   # Windows PowerShell
+   .venv\Scripts\activate
    ```
-3. Instale as dependências:
+3. Install dependencies:
 
    ```bash
    pip install -r requirements.txt
@@ -46,59 +48,55 @@ Uma ferramenta simples em Python para enviar em lote todos os vídeos de uma pas
 
 ---
 
-## 🔧 Configuração
+## 🔧 Configuration
 
-1. No **Google Cloud Console**, crie um **OAuth Client ID** (tipo “Application → Desktop”) e baixe o JSON.
-2. Ative a **YouTube Data API v3** no mesmo projeto.
-3. Renomeie o JSON para `client_secret.json` e copie para a raiz do projeto.
+1. In the **Google Cloud Console**, create an **OAuth Client ID** (Application → Desktop) and download the JSON.
+2. Ensure the **YouTube Data API v3** is enabled in the same project.
+3. Rename the downloaded JSON to `client_secret.json` and place it in the project root.
 
 ---
 
-## 🎬 Como usar
+## 🎬 Usage
 
-1. Execute:
+1. Run the script:
 
    ```bash
    python main.py
    ```
-2. **Informe o caminho** da pasta com seus vídeos (por ex. `C:\Users\gusta\Videos\Fortnite\Teste`).
-3. **Escolha a visibilidade**:
+2. **Enter the folder path** containing your videos (e.g. `C:\Users\gusta\Videos\Fortnite\Teste`).
+3. **Select visibility**:
 
-   * `1` — Público (padrão)
-   * `2` — Privado
-4. O navegador abrirá para você autorizar o App no Google.
-5. O script subirá cada vídeo e, ao concluir, moverá para `upload_success/`.
-
----
-
-## 📂 Estrutura do projeto
-
-```
-.
-├── client_secret.json       # Credenciais OAuth (gitignore)
-├── main.py                  # Script principal
-├── requirements.txt         # Dependências
-└── README.md                # Documentação
-```
+   * `1` — Public (default)
+   * `2` — Private
+4. A browser window will open for you to authorize the app with Google.
+5. The script will upload each video and then move it into the `upload_success/` folder.
 
 ---
 
-## 🤝 Contribuições
+## 📂 Project Structure
 
-1. Faça um *fork* deste repositório
-2. Crie uma *branch* (`git checkout -b feature/nome-da-feature`)
-3. Faça suas alterações e *commits*
-4. Abra um **Pull Request**
+```
+├── client_secret.json       # OAuth credentials (gitignored)
+├── main.py                  # Main script
+├── requirements.txt         # Dependencies
+└── README.md                # This file
+```
 
 ---
 
-## 🛡️ Licença
+## 🤝 Contributing
 
-Este projeto está licenciado sob a **MIT License**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+1. Fork this repository
+2. Create a branch (`git checkout -b feature/your-feature`)
+3. Commit your changes
+4. Open a Pull Request
 
 ---
 
-Feito com ♥ por **G-Liu Code** • [https://gustavoliu.com](https://gustavoliu.com)
+## 🛡️ License
 
-```
-```
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+
+---
+
+Made with ♥ by **G-Liu Code** • [https://gustavoliu.com](https://gustavoliu.com)
