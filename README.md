@@ -1,3 +1,4 @@
+<!-- keywords: youtube api, python upload, oauth2, batch upload, video uploader -->
 
 # YouTube Video Uploader CLI
 
